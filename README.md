@@ -4,7 +4,7 @@
 ## Project: Updating gopy to support Python3 and PyPy
 
 
-## Students
+## Student
 [Dong-hee Na](https://github.com/corona10) / Chugnam National University
 
 ## Mentors
