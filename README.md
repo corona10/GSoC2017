@@ -3,7 +3,7 @@
 
 # Final Report
 
-## Project: Updating gopy to support Python3 and PyPy
+## Project Updating gopy to support Python3 and PyPy
 
 ## Student
 [Dong-hee Na](https://github.com/corona10) / Chugnam National University
@@ -20,16 +20,16 @@ CFFI is C Foreign Function interface for Python. It interacts with almost any C 
 
 In terms of Go API can be exposed by C API which is called Cgo. this project is focused on calling Go package C API through CFFI. Through this approach, it can interact with most of existing Python compilers.
 
-Generate CFFI codes for gopy can be done by 3 phases. First, generating wrapped go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
+Generate CFFI codes for gopy can be done by 3 phases. First, generating wrapped Go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
 
 ## Supported Features.
 
 A. Basic types
    
-   ```go
-   package simple
+```go
+package simple
    
-   func Add(i, j int) int {
+func Add(i, j int) int {
         return i + j
 }
 
@@ -40,18 +40,48 @@ func Bool(b bool) bool {
 func Comp64Add(i, j complex64) complex64 {
         return i + j
 }
-   ```
-   simple package can be easily imported by Python.
-   And Python can call each of go functions which use basic types parameters and basic types return values.
-   ```python
-   import simple
+
+```
+simple package can be easily imported by Python.
+And Python can call each of Go functions which use basic types parameters and basic types return values.
    
-   a = simple.Add(5,3)
-   b = simple.Bool(True)
-   c = simple.Comp64Add(3+5j, 2+2j)
-   ```
+```python
+import simple
    
-B. 
+a = simple.Add(5,3)
+b = simple.Bool(True)
+c = simple.Comp64Add(3+5j, 2+2j)
+```
+   
+B. Detect functions returning a Go error and make them pythonic (raising an Exception)
+
+```
+package pyerrors
+
+import "errors"
+
+// Div is a function for detecting errors.
+func Div(i, j int) (int, error) {
+        if j == 0 {
+                return 0, errors.New("Divide by zero.")
+        }
+        return i / j, nil
+}
+```
+Go supports returning error types to detect error has occurred.
+By using gopy and cffi engine it can be detected on Python side by the pythonic way.
+
+```python
+def div(a, b):
+    try:
+        r = pyerrors.Div(a, b)
+        print("pyerrors.Div(%d, %d) = %d"% (a, b, r))
+    except Exception as e:
+        print(e)
+
+div(5,0)
+div(5,2)
+```
 
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
