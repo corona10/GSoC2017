@@ -3,7 +3,36 @@
 
 ## Project: Updating gopy to support Python3 and PyPy
 
+
+## Students
+[Dong-hee Na](https://github.com/corona10) / Chugnam National University
+
+## Mentors
+[Sebastien Binet](https://github.com/sbinet) / CERN-HSF
+
+[Alexandre Claude](https://github.com/alclaude) / CERN-HSF
+
 ## Final Report [PDF Version](#)
+
+## Special thanks to
+* [Haeun Kim](https://github.com/haeungun/)
+
+## Pull Requests
+* [bind: make sure GODEBUG=cgocheck=0 for Go>=1.6](https://github.com/go-python/gopy/pull/91)
+* [gopy,bind: add boilerplate code for cffi support](https://github.com/go-python/gopy/pull/93)
+* [bind, gencffi: Remove generating builders and support Vars and Consts.](https://github.com/go-python/gopy/pull/98)
+* [gencffi: Detect functions returning a Go error](https://github.com/go-python/gopy/pull/105)
+* [gopy: go-1.9 requires exactly one main package for c-shared libs](https://github.com/go-python/gopy/pull/109)
+* [gencffi: Support bool types](https://github.com/go-python/gopy/pull/111)
+* [cffi: Support struct types.](https://github.com/go-python/gopy/pull/113)
+* [cffi: Let Python3 handles string as ASCII.](https://github.com/go-python/gopy/pull/115)
+* [cffi: Support complex number types.](https://github.com/go-python/gopy/pull/116)
+* [cffi: Support named type + Pass 'seq.go' test.](https://github.com/go-python/gopy/pull/120)
+* [cffi: Support unnamed types and pass hi.go](https://github.com/go-python/gopy/pull/123)
+* [cffi: Implement wrapping of functions with slices/arrays of builtin arguments](https://github.com/go-python/gopy/pull/129)
+* [cffi: Updates README.md](https://github.com/go-python/gopy/pull/133)
+* [cffi: Support built-in maps.](https://github.com/go-python/gopy/pull/137)
+
 
 ## Blog Posts:
 1. [My Google Summer Of Code 2017 project with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Accepted/)
@@ -15,6 +44,5 @@
 7. [[GSoC 2017] Coding period Week5 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week5/)
 8. [[GSoC 2017] Coding period Week6 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week6/)
 9. [[GSoC 2017] Coding period Week7 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week7/)
-
-## Special thanks to
-* [Haeun Kim](https://github.com/haeungun/)
+10. [[GSoC 2017] Coding period Week7 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week8/)
+11. [[GSoC 2017] Coding period Week7 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week9/)
