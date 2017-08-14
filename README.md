@@ -24,7 +24,7 @@ Generate CFFI codes for gopy can be done by 3 phases. First, generating wrapped 
 
 ## Supported Features.
 
-A. Basic types
+**A. Basic types**
    
 ```go
 package simple
@@ -53,7 +53,7 @@ b = simple.Bool(True)
 c = simple.Comp64Add(3+5j, 2+2j)
 ```
    
-B. Detect functions returning a Go error and make them pythonic (raising an Exception)
+**B. Detect functions returning a Go error and make them pythonic (raising an Exception)**
 
 ```
 package pyerrors
