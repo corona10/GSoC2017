@@ -1,4 +1,6 @@
 # Google Summer Of Code 2017 
+![GSoC2017](/img/googlesummerofcode.png)
+
 # Final Report
 
 ## Project: Updating gopy to support Python3 and PyPy
