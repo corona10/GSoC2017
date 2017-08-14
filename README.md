@@ -55,7 +55,7 @@ c = simple.Comp64Add(3+5j, 2+2j)
    
 **B. Detect functions returning a Go error and make them pythonic (raising an Exception)**
 
-```
+```go
 package pyerrors
 
 import "errors"
