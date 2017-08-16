@@ -128,6 +128,12 @@ print("s1 = %s" %(s1,))
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
 
+## Limitations
+* [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
+* [Go interfaces is not yet fully supported.](https://github.com/go-python/gopy/issues/114)
+* Need to support more types.
+
+
 ## Pull Requests
 * [bind: make sure GODEBUG=cgocheck=0 for Go>=1.6](https://github.com/go-python/gopy/pull/91)
 * [gopy,bind: add boilerplate code for cffi support](https://github.com/go-python/gopy/pull/93)
