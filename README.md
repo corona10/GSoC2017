@@ -148,6 +148,38 @@ print("c2 = %s" % consts.GetC2())
 print("c3 = %s" % consts.GetC3())
 ```
 
+**E.Variables**
+```go
+package vars
+
+var (
+        V1 = "v1"
+        V2 = 42
+        V3 = 666.666
+)
+
+var (
+        V4 string  = "c4"
+        V5 int     = 42
+        V6 uint    = 42
+        V7 float64 = 666.666
+)
+```
+
+gopy with CFFI engine supports accessing variables by `Get/Set` methods.
+
+```python
+import vars
+
+print("Initial values")
+print("v1 = %s" % vars.GetV1())
+print("v2 = %s" % vars.GetV2())
+print("v3 = %s" % vars.GetV3())
+print("v4 = %s" % vars.GetV4())
+print("v5 = %s" % vars.GetV5())
+print("v6 = %s" % vars.GetV6())
+print("v7 = %s" % vars.GetV7())
+```
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
 
