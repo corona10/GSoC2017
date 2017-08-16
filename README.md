@@ -125,6 +125,29 @@ s1 = structs.S1()
 print("s1 = %s" %(s1,))
 ```
 
+**D.Constants**
+
+```go
+package consts
+
+const (
+        C1 = "c1"
+        C2 = 42
+        C3 = 666.666
+)
+```
+
+Constants are a read-only variable of Go.
+gopy supports constants of Go by accessing `Get` methods.
+
+```python
+import consts
+
+print("c1 = %s" % consts.GetC1())
+print("c2 = %s" % consts.GetC2())
+print("c3 = %s" % consts.GetC3())
+```
+
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
 
