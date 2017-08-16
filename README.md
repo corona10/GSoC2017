@@ -125,7 +125,7 @@ s1 = structs.S1()
 print("s1 = %s" %(s1,))
 ```
 
-**D.Constants**
+**D. Constants**
 
 ```go
 package consts
@@ -148,7 +148,7 @@ print("c2 = %s" % consts.GetC2())
 print("c3 = %s" % consts.GetC3())
 ```
 
-**E.Variables**
+**E. Variables**
 ```go
 package vars
 
@@ -180,8 +180,44 @@ print("v5 = %s" % vars.GetV5())
 print("v6 = %s" % vars.GetV6())
 print("v7 = %s" % vars.GetV7())
 ```
+
+**F. Arrays**
+```go
+package arrays
+
+func IntSum(a [4]int) int {
+        sum := 0
+        for i := 0; i < len(a); i++ {
+                sum += a[i]
+        }
+        return sum
+}
+
+func CreateArray() [4]int {
+        return [4]int{1, 2, 3, 4}
+}
+```
+gopy with CFFI engine supports Go's arrays.
+gopy supports random accessing of arrays. Also, it supports arrays as function arguments.
+
+```python
+import arrays
+
+a = [1,2,3,4]
+b = arrays.CreateArray()
+print ("Python list:", a)
+print ("Go array: ", b)
+print ("arrays.IntSum from Python list:", arrays.IntSum(a))
+print ("arrays.IntSum from Go array:", arrays.IntSum(b))
+```
+
+
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
+
+
+## Benchmark
+
 
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
