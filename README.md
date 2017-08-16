@@ -83,6 +83,48 @@ div(5,0)
 div(5,2)
 ```
 
+**C. Go struct**
+
+```go
+type S struct{}
+
+func (S) Init() {}
+func (S) Upper(s string) string {
+        return strings.ToUpper(s)
+}
+
+func FuncTest(item S) {}
+
+func (this S) MethodTest(item S1) {}
+
+type S1 struct {
+        private int
+}
+
+type S2 struct {
+        Public  int
+        private int
+}
+```
+
+Go’s structs are typed collections of fields. They’re useful for grouping data together to form records.
+By using gopy and cffi engine, a user can import Go' structs and use its method and fields.
+
+```python
+import structs
+
+print("s = structs.S()")
+s = structs.S()
+print("s = %s" % (s,))
+print("s.Init()")
+s.Init()
+print("s.Upper('boo')= %r" % (s.Upper("boo"),))
+
+print("s1 = structs.S1()")
+s1 = structs.S1()
+print("s1 = %s" %(s1,))
+```
+
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
 
@@ -115,3 +157,4 @@ div(5,2)
 * [[GSoC 2017] Coding period Week7 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week7/)
 * [[GSoC 2017] Coding period Week8 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week8/)
 * [[GSoC 2017] Coding period Week9 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week9/)
+* [[GSoC 2017] Coding period Week10 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week10/)
