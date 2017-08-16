@@ -197,8 +197,9 @@ func CreateArray() [4]int {
         return [4]int{1, 2, 3, 4}
 }
 ```
+An array is a fixed size elements arrangement.
 gopy with CFFI engine supports Go's arrays.
-gopy supports random accessing of arrays. Also, it supports arrays as function arguments.
+It supports random accessing of arrays. Also, it supports arrays as function arguments.
 
 ```python
 import arrays
@@ -211,6 +212,37 @@ print ("arrays.IntSum from Python list:", arrays.IntSum(a))
 print ("arrays.IntSum from Go array:", arrays.IntSum(b))
 ```
 
+**G. Slices**
+```go
+package slices
+
+func IntSum(s []int) int {
+        sum := 0
+        for _, value := range s {
+                sum += value
+        }
+        return sum
+}
+
+func CreateSlice() []int {
+        return []int{1, 2, 3, 4}
+}
+```
+A slice is a dynamically-sized, flexible view into the elements of an array. 
+gopy with CFFI engine supports Go's slices.
+It supports basic slices operations.
+Also, it supports slices as function arguments.
+
+```python
+import slices
+
+a = [1,2,3,4]
+b = slices.CreateSlice()
+print ("Python list:", a)
+print ("Go slice: ", b)
+print ("slices.IntSum from Python list:", slices.IntSum(a))
+print ("slices.IntSum from Go slice:", slices.IntSum(b))
+```
 
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
