@@ -26,6 +26,10 @@ In terms of Go API can be exposed by C API which is called Cgo. this project is 
 
 Generating CFFI codes for gopy can be done by 3 phases. First, generate wrapped Go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
 
+[Proposal slide](slide/gsoc_cern_talks_gopy.pdf)
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/Iv4fQV87iE86X0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
 ## Mentors
 [Sebastien Binet](https://github.com/sbinet) / [CERN-HSF](http://hepsoftwarefoundation.org/)
 
