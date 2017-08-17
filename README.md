@@ -8,9 +8,9 @@
   * [Supported Features.](#supported-features)
   * [Benchmark](#benchmark)
   * [Limitations](#limitations)
+  * [Conclusion](#conclusion)
   * [Pull Requests](#pull-requests)
   * [Blog Posts](#blog-posts)
-  * [Conclusion](#conclusion)
   * [Special thanks to](#special-thanks-to)
 
 
@@ -261,6 +261,7 @@ print ("slices.IntSum from Go slice:", slices.IntSum(b))
 * [Go interfaces is not yet fully supported.](https://github.com/go-python/gopy/issues/114)
 * Need to support more types.
 
+## Conclusion
 
 ## Pull Requests
 * [bind: make sure GODEBUG=cgocheck=0 for Go>=1.6](https://github.com/go-python/gopy/pull/91)
@@ -292,8 +293,6 @@ print ("slices.IntSum from Go slice:", slices.IntSum(b))
 * [[GSoC 2017] Coding period Week8 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week8/)
 * [[GSoC 2017] Coding period Week9 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week9/)
 * [[GSoC 2017] Coding period Week10 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week10/)
-
-## Conclusion
 
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
