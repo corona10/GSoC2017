@@ -381,7 +381,7 @@ And this was the main task of Google Summer Of Code 2017.
 gopy is not always the best answer for Python. because there is a communication overhead between Python VM and Go.
 However, if Python needs to calculate heavy task with a multi-threaded method, Using gopy will provide tremendous performance improvements with the power of goroutine. It was also proved by our benchmark result.
 
-There are a lot of experimental project for between Go and other languages. And we believe gopy is one of the successful projects for that objective. However, There are few things to solve that gopy can be used in real world production. And removing cgocheck policy is one of the things.
+There are a lot of experimental project for between Go and other languages. And we believe gopy is one of the successful projects for that objective. However, There are few things to solve for gopy to be used in real world production. And removing cgocheck policy is one of the things.
 
 Although Google Summer of Code 2017 is ended, I am going to contribute gopy project to use this project for real world production. And I hope more people join gopy project also. I and Sebastien always welcome those people.
 
