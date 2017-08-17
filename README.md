@@ -1,7 +1,7 @@
 # Google Summer Of Code 2017 
 ![GSoC2017](/img/googlesummerofcode.png)
 
-# Organization
+## Organization
 ![CERN-HSF](/img/cern-hsf.png)
 
 # Final Report
