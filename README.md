@@ -2,9 +2,9 @@
 ![GSoC2017](/img/googlesummerofcode.png)
 
 # Final Report
-  * [Project Updating gopy to support Python3 and PyPy](#project-updating-gopy-to-support-python3-and-pypy)
-  * [Student](#student)
+  * [Updating gopy to support Python3 and PyPy](#updating-gopy-to-support-python3-and-pypy)
   * [Mentors](#mentors)
+  * [Student](#student)
   * [Supported Features.](#supported-features)
   * [Benchmark](#benchmark)
   * [Limitations](#limitations)
@@ -14,22 +14,22 @@
   * [Special thanks to](#special-thanks-to)
 
 
-## Project Updating gopy to support Python3 and PyPy
+## Updating gopy to support Python3 and PyPy
 gopy is an tool which generates (and compiles) a Python extension module from a go package. Although gopy provides powerful features of Go, gopy only supported CPython2. So I proposed updating gopy to support Python3 and PyPy by using CFFI.
 
 CFFI is C Foreign Function interface for Python. It interacts with almost any C Code from Python. While ctypes is not perfectly compatible with PyPy.
 
 In terms of Go API can be exposed by C API which is called Cgo. this project is focused on calling Go package C API through CFFI. Through this approach, it can interact with most of existing Python compilers.
 
-Generate CFFI codes for gopy can be done by 3 phases. First, generating wrapped Go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
-
-## Student
-[Dong-hee Na](https://github.com/corona10) / Chugnam National University
+Generating CFFI codes for gopy can be done by 3 phases. First, generate wrapped Go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
 
 ## Mentors
 [Sebastien Binet](https://github.com/sbinet) / CERN-HSF
 
 [Alexandre Claude](https://github.com/alclaude) / CERN-HSF
+
+## Student
+[Dong-hee Na](https://github.com/corona10) / Chugnam National University
 
 ## Supported Features.
 
@@ -252,7 +252,43 @@ print ("Go slice: ", b)
 print ("slices.IntSum from Python list:", slices.IntSum(a))
 print ("slices.IntSum from Go slice:", slices.IntSum(b))
 ```
+**H. maps**
+```go
+package maps
 
+import (
+        "sort"
+)
+
+func Sum(t map[int]float64) float64 {
+        sum := 0.0
+        for _, v := range t {
+                sum += v
+        }
+
+        return sum
+}
+
+func New() map[int]float64 {
+        return map[int]float64{
+                1: 3.0,
+                2: 5.0,
+        }
+}
+```
+A map is a key/value data structure of Go.
+This feature is supported by CFFI engine.
+A user can pass the parameter Python dict as a map parameter also.
+
+```python
+from __future__ import print_function
+import maps
+
+a = maps.New()
+b = {1: 3.0, 2: 5.0}
+print('maps.Sum from Go map:', maps.Sum(a))
+print('maps.Sum from Python dictionary:', maps.Sum(b))
+```
 ## Benchmark
 
 
