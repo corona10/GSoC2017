@@ -1,6 +1,9 @@
 # Google Summer Of Code 2017 
 ![GSoC2017](/img/googlesummerofcode.png)
 
+# Organization
+![CERN-HSF](/img/cern-hsf.png)
+
 # Final Report
   * [Updating gopy to support Python3 and PyPy](#updating-gopy-to-support-python3-and-pypy)
   * [Mentors](#mentors)
