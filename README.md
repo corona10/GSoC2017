@@ -289,6 +289,11 @@ b = {1: 3.0, 2: 5.0}
 print('maps.Sum from Go map:', maps.Sum(a))
 print('maps.Sum from Python dictionary:', maps.Sum(b))
 ```
+
+**I. Named types**
+
+**J. Unnamed types**
+
 ## Benchmark
 
 
