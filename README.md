@@ -2,8 +2,23 @@
 ![GSoC2017](/img/googlesummerofcode.png)
 
 # Final Report
+  * [Project Updating gopy to support Python3 and PyPy](#project-updating-gopy-to-support-python3-and-pypy)
+  * [Student](#student)
+  * [Mentors](#mentors)
+  * [Supported Features.](#supported-features)
+  * [Benchmark](#benchmark)
+  * [Limitations](#limitations)
+  * [Pull Requests](#pull-requests)
+  * [Blog Posts](#blog-posts)
 
 ## Project Updating gopy to support Python3 and PyPy
+gopy is an tool which generates (and compiles) a Python extension module from a go package. Although gopy provides powerful features of Go, gopy only supported CPython2. So I proposed updating gopy to support Python3 and PyPy by using CFFI.
+
+CFFI is C Foreign Function interface for Python. It interacts with almost any C Code from Python. While ctypes is not perfectly compatible with PyPy.
+
+In terms of Go API can be exposed by C API which is called Cgo. this project is focused on calling Go package C API through CFFI. Through this approach, it can interact with most of existing Python compilers.
+
+Generate CFFI codes for gopy can be done by 3 phases. First, generating wrapped Go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
 
 ## Student
 [Dong-hee Na](https://github.com/corona10) / Chugnam National University
@@ -12,15 +27,6 @@
 [Sebastien Binet](https://github.com/sbinet) / CERN-HSF
 
 [Alexandre Claude](https://github.com/alclaude) / CERN-HSF
-
-## Abstract
-gopy is an tool which generates (and compiles) a Python extension module from a go package. Although gopy provides powerful features of Go, gopy only supported CPython2. So I proposed updating gopy to support Python3 and PyPy by using CFFI.
-
-CFFI is C Foreign Function interface for Python. It interacts with almost any C Code from Python. While ctypes is not perfectly compatible with PyPy.
-
-In terms of Go API can be exposed by C API which is called Cgo. this project is focused on calling Go package C API through CFFI. Through this approach, it can interact with most of existing Python compilers.
-
-Generate CFFI codes for gopy can be done by 3 phases. First, generating wrapped Go package code. Second, Analyze which interfaces should be exposed and generate C definition functions by rule based naming. Third, Generate a wrapper Python codes which Python compiler will import.
 
 ## Supported Features.
 
@@ -274,7 +280,7 @@ print ("slices.IntSum from Go slice:", slices.IntSum(b))
 * [cffi: Support built-in maps.](https://github.com/go-python/gopy/pull/137)
 
 
-## Blog Posts:
+## Blog Posts
 * [My Google Summer Of Code 2017 project with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Accepted/)
 * [[GSoC 2017] Community bonding period with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-community-bonding/)
 * [[GSoC 2017] Coding period Week1 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week1/)
