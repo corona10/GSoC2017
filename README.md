@@ -295,7 +295,76 @@ print('maps.Sum from Python dictionary:', maps.Sum(b))
 
 **I. Named types**
 
+```go
+package named
+
+type Float float32
+
+// Value returns a float32 value
+func (f Float) Value() float32 { return float32(f) }
+
+type X float32
+type XX X
+type XXX XX
+type XXXX XXX
+
+// Value returns a float32 value
+func (x X) Value() float32 { return float32(x) }
+
+// Value returns a float32 value
+func (x XX) Value() float32 { return float32(x) }
+
+// Value returns a float32 value
+func (x XXX) Value() float32 { return float32(x) }
+
+// Value returns a float32 value
+func (x XXXX) Value() float32 { return float32(x) }
+```
+Go supports to define user custom typed with named.
+By using gopy, it can be used by package method.
+
+```python
+import named
+
+print("v = named.Float()")
+v = named.Float()
+print("v = %s" % (v,))
+print("v.Value() = %s" % (v.Value(),))
+
+print("x = named.X()")
+x = named.X()
+print("x = %s" % (x,))
+print("x.Value() = %s" % (x.Value(),))
+
+print("x = named.XX()")
+x = named.XX()
+print("x = %s" % (x,))
+print("x.Value() = %s" % (x.Value(),))
+```
+
 **J. Unnamed types**
+
+```go
+package hi
+
+var (
+        IntSlice = []int{1, 2}                      // A slice of ints
+        IntArray = [2]int{1, 2}                     // An array of ints
+)
+```
+
+Go supports to define user custom typed with unnamed.
+By using gopy, it can be used by calling package method.
+
+```python
+
+import hi
+a = hi.GetIntArray()
+print(a)
+print(a[0])
+print(a[1])
+print(len(a))
+```
 
 ## Benchmark
 
