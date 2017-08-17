@@ -10,6 +10,9 @@
   * [Limitations](#limitations)
   * [Pull Requests](#pull-requests)
   * [Blog Posts](#blog-posts)
+  * [Conclusion](#conclusion)
+  * [Special thanks to](#special-thanks-to)
+
 
 ## Project Updating gopy to support Python3 and PyPy
 gopy is an tool which generates (and compiles) a Python extension module from a go package. Although gopy provides powerful features of Go, gopy only supported CPython2. So I proposed updating gopy to support Python3 and PyPy by using CFFI.
@@ -250,10 +253,6 @@ print ("slices.IntSum from Python list:", slices.IntSum(a))
 print ("slices.IntSum from Go slice:", slices.IntSum(b))
 ```
 
-## Special thanks to
-* [Haeun Kim](https://github.com/haeungun/)
-
-
 ## Benchmark
 
 
@@ -293,3 +292,8 @@ print ("slices.IntSum from Go slice:", slices.IntSum(b))
 * [[GSoC 2017] Coding period Week8 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week8/)
 * [[GSoC 2017] Coding period Week9 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week9/)
 * [[GSoC 2017] Coding period Week10 with gopy@CERN-HSF](http://corona10.github.io/GSoC2017-Week10/)
+
+## Conclusion
+
+## Special thanks to
+* [Haeun Kim](https://github.com/haeungun/)
