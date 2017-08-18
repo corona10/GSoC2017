@@ -390,7 +390,7 @@ func Add(a int, b int) int {
 ```
 
 Go supports a documentation feature through Godoc.
-It is a simllar feature with Python's Pydoc.
+It is a similar feature with Python's Pydoc.
 gopy also migrate Go's documentation for the vars, functions, and types into Pydoc.
 Here is the example.
 
