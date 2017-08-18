@@ -524,8 +524,6 @@ def GetPI(samples):
     return sum(count)/(samples*1.0)*4
 ```
 
-*CPython2 VS gopy benchmark*
-
 | Sample Counts | CPython2 elapsed (sec) |  gopy elapsed (sec) |
 |:-------------:|:----------------------:|:------------------:|
 | 10            |        0.009872        |      0.001530      |
@@ -535,7 +533,7 @@ def GetPI(samples):
 | 100000        |        0.006253        |      0.000823      |
 | 1000000       |        0.020241        |      0.002766      |
 
-*PyPy VS gopy benchmark*
+*CPython2 VS gopy benchmark*
 
 | Sample Counts | PyPy elapsed (sec) | gopy elapsed (sec) |
 |:-------------:|:------------------:|:-----------------:|
@@ -546,7 +544,7 @@ def GetPI(samples):
 | 100000        |      0.020035      |      0.002385     |
 | 1000000       |      0.034196      |      0.012172     |
 
-*CPython3 VS gopy benchmark*
+*PyPy VS gopy benchmark*
 
 | Sample Counts | CPython3 elapsed (sec) | gopy elapsed(sec) |
 |:-------------:|:----------------------:|:-----------------:|
@@ -557,7 +555,10 @@ def GetPI(samples):
 | 100000        |        0.023466        |      0.002581     |
 | 1000000       |        0.117782        |      0.016638     |
 
+*CPython3 VS gopy benchmark*
+
 ### Benchmark Analysis
+As you can see FindElementOfIndex Test, Although Go run itself as compiled program, Communication overhead between Python VM and Go is not cheap. For example, If Python passes the parameters with Python list or dict, It converts them into Go objects such as Slices or Arrays. This operation is done by deep copying. It's very heavy cost. If we can solve this issue by the more efficient way.(e.g referencing elements). Communication overhead could be reduced. And the other side, if we see the result of Calculating PI with Monte Carlo method Test, the Python can solve highly heavy multi-threaded calculation through gopy. And this result shows that calculation time can be reduced by using gopy.
 
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
