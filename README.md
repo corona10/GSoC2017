@@ -368,6 +368,50 @@ print(a[1])
 print(len(a))
 ```
 
+**K. Go documentation extraction
+
+```go
+package extract
+
+
+const (
+        PI float64  = 3.14
+)
+
+// Type S1 has a public field 
+type S1 struct {
+        Public int
+}
+
+// Add is function which returns sum of two variables.
+func Add(a int, b int) int {
+        return a + b
+}
+```
+
+```python
+root@180a6474ebba:~/go/src/github.com/go-python/gopy/_examples/extract# pypy 
+Python 2.7.10 (5.1.2+dfsg-1~16.04, Jun 16 2016, 17:37:42)
+[PyPy 5.1.2 with GCC 5.3.1 20160413] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>>> import extract
+>>>> dir(extract)
+['Add', 'GetGSoC', 'GetPI', 'S1', 'SetGSoC', '_PY3', '__builtins__', '__cached__', '__doc__', '__file__', '__name__', '__package__', '_cffi_backend', '_cffi_helper', 'collections', 'ffi', 'os', 'sys']
+>>>> print(extract.Add.__doc__)
+Add(int a, int b) int
+
+Add is function which returns sum of two variables.
+
+>>>> print(extract.GetGSoC.__doc__)
+returns extract.GSoC
+>>>> print(extract.SetGSoC.__doc__)
+sets extract.GSoC
+>>>> print(extract.S1.__doc__)
+Type S1 has a public field
+
+>>>> 
+```
+
 ## Benchmark
 
 
