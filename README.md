@@ -558,7 +558,7 @@ def GetPI(samples):
 *CPython3 VS gopy benchmark*
 
 ### Benchmark Analysis
-As you can see FindElementOfIndex Test, Although Go run itself as compiled program, Communication overhead between Python VM and Go is not cheap. For example, If Python passes the parameters with Python list or dict, It converts them into Go objects such as Slices or Arrays. This operation is done by deep copying. It's very heavy cost. If we can solve this issue by the more efficient way.(e.g referencing elements). Communication overhead could be reduced. And the other side, if we see the result of Calculating PI with Monte Carlo method Test, the Python can solve highly heavy multi-threaded calculation through gopy. And this result shows that calculation time can be reduced by using gopy.
+As you can see `FindElementOfIndex Test`, Although Go run itself as compiled program, Communication overhead between Python VM and Go is not cheap. For example, If Python passes the parameters with Python list or dict, It converts them into Go objects such as Slices or Arrays. This operation is done by deep copying and its cost is very heavy. If we can solve this issue by the more efficient way.(e.g referencing elements). Communication overhead could be reduced. And the other side, if we see the result of `Calculating PI with Monte Carlo method Test`, Python can solve highly heavy multi-threaded calculation faster than pure Python calculation by using gopy. It means that we can solve this kind of calculation with the power of the goroutine and elapsed times can be reduced through gopy.
 
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
