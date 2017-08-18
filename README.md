@@ -459,6 +459,71 @@ def FindElementIdx(numbers, value):
 * [Python code](/benchmark/bench2.py)
 * [Go code](/benchmark/bench2.py)
 
+```go
+func monte_carlo_pi(reps int, result *int, wait *sync.WaitGroup) {
+        var x, y float64
+        count := 0
+        seed := rand.NewSource(time.Now().UnixNano())
+        random := rand.New(seed)
+
+        for i := 0; i < reps; i++ {
+                x = random.Float64() * 1.0
+                y = random.Float64() * 1.0
+
+                if num := math.Sqrt(x*x + y*y); num < 1.0 {
+                        count++
+                }
+        }
+
+        *result = count
+        wait.Done()
+}
+
+func GetPI(samples int) float64 {
+        cores := runtime.NumCPU()
+        runtime.GOMAXPROCS(cores)
+
+        var wait sync.WaitGroup
+
+        counts := make([]int, cores)
+
+        wait.Add(cores)
+
+        for i := 0; i < cores; i++ {
+                go monte_carlo_pi(samples/cores, &counts[i], &wait)
+        }
+
+        wait.Wait()
+
+        total := 0
+        for i := 0; i < cores; i++ {
+                total += counts[i]
+        }
+
+        pi := (float64(total) / float64(samples)) * 4
+        return pi
+}
+```
+```python
+def monte_carlo_pi_part(n):
+    count = 0
+    for i in range(n):
+        x=random.random()
+        y=random.random()
+
+        if x*x + y*y <= 1:
+            count=count+1
+
+    return count
+
+def GetPI(samples):
+    np = multiprocessing.cpu_count()
+    part_count=[int(samples/np) for i in range(np)]
+    pool = Pool(processes=np)
+    count=pool.map(monte_carlo_pi_part, part_count)
+    return sum(count)/(samples*1.0)*4
+```
+
 *CPython2 VS gopy benchmark*
 
 | Sample Counts | CPython2 elapsed (sec) |  gopy elapsed (sec) |
