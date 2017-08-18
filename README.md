@@ -557,6 +557,8 @@ def GetPI(samples):
 | 100000        |        0.023466        |      0.002581     |
 | 1000000       |        0.117782        |      0.016638     |
 
+### Benchmark Analysis
+
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
 * [Go interfaces is not yet fully supported.](https://github.com/go-python/gopy/issues/114)
