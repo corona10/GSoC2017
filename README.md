@@ -368,7 +368,7 @@ print(a[1])
 print(len(a))
 ```
 
-**K. Go documentation extraction
+**K. Go documentation extraction**
 
 ```go
 package extract
