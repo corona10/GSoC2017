@@ -447,7 +447,7 @@ def FindElementIdx(numbers, value):
    return -1
 ```
 
-| Python Interpreter | Python time elapsed(sec)    | gopy time elapsed(sec)  |
+| Python Interpreter | Python time elapsed(sec)| gopy time elapsed (sec)  |
 |:------------------:|----------------------|--------------------|
 | Python2            | 0.0396955013275      | 3.74620819092      |
 | Python3            | 0.043562889099121094 | 3.0519542694091797 |
@@ -459,7 +459,9 @@ def FindElementIdx(numbers, value):
 * [Python code](/benchmark/bench2.py)
 * [Go code](/benchmark/bench2.py)
 
-| Sample Counts | CPython2 elapsed (sec) |  gopy elapsed(sec) |
+*CPython2 VS gopy benchmark*
+
+| Sample Counts | CPython2 elapsed (sec) |  gopy elapsed (sec) |
 |:-------------:|:----------------------:|:------------------:|
 | 10            |        0.009872        |      0.001530      |
 | 100           |  0.043562889099121094  | 3.0519542694091797 |
@@ -468,7 +470,9 @@ def FindElementIdx(numbers, value):
 | 100000        |        0.006253        |      0.000823      |
 | 1000000       |        0.020241        |      0.002766      |
 
-| Sample Counts | PyPy elapsed (sec) | gopy elapsed(sec) |
+*PyPy VS gopy benchmark*
+
+| Sample Counts | PyPy elapsed (sec) | gopy elapsed (sec) |
 |:-------------:|:------------------:|:-----------------:|
 | 10            |     0.0.013827     |      0.001615     |
 | 100           |       0.00939      |      0.000846     |
@@ -476,6 +480,17 @@ def FindElementIdx(numbers, value):
 | 10000         |      0.020542      |      0.000975     |
 | 100000        |      0.020035      |      0.002385     |
 | 1000000       |      0.034196      |      0.012172     |
+
+*CPython3 VS gopy benchmark*
+
+| Sample Counts | CPython3 elapsed (sec) | gopy elapsed(sec) |
+|:-------------:|:----------------------:|:-----------------:|
+| 10            |        0.018612        |      0.001381     |
+| 100           |        0.008366        |      0.000763     |
+| 1000          |        0.007015        |      0.000777     |
+| 10000         |        0.010334        |      0.000897     |
+| 100000        |        0.023466        |      0.002581     |
+| 1000000       |        0.117782        |      0.016638     |
 
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
