@@ -459,6 +459,15 @@ def FindElementIdx(numbers, value):
 * [Python code](/benchmark/bench2.py)
 * [Go code](/benchmark/bench2.py)
 
+| Sample Counts | CPython2 elapsed (sec) |  gopy elapsed(sec) |
+|:-------------:|:----------------------:|:------------------:|
+| 10            |        0.009872        |      0.001530      |
+| 100           |  0.043562889099121094  | 3.0519542694091797 |
+| 1000          |        0.004988        |      0.000714      |
+| 10000         |        0.006712        |       0.00076      |
+| 100000        |        0.006253        |      0.000823      |
+| 1000000       |        0.020241        |      0.002766      |
+| 10000000      |        0.132703        |      0.016841      |
 
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
