@@ -421,8 +421,8 @@ Type S1 has a public field
 
 **A. FindElementOfIndex Test**
 
-[Python code](/benchmark/bench1.py)
-[Go code](/benchmark/bench1.py)
+* [Python code](/benchmark/bench1.py)
+* [Go code](/benchmark/bench1.py)
 
 ```go
 package bench1
@@ -456,8 +456,8 @@ def FindElementIdx(numbers, value):
 
 **B. Calculating PI with Monte Carlo method Test**
 
-[Python code](/benchmark/bench2.py)
-[Go code](/benchmark/bench2.py)
+* [Python code](/benchmark/bench2.py)
+* [Go code](/benchmark/bench2.py)
 
 
 ## Limitations
