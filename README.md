@@ -419,6 +419,58 @@ Type S1 has a public field
 
 ## Benchmark
 
+**A. FindElementOfIndex Test**
+
+```go
+package bench1
+
+func FindElementIdx(arrays []int, value int) int {
+        for idx, v := range arrays {
+                if v == value {
+                        return idx
+                }
+        }
+
+        return -1;
+}
+```
+
+```python
+def FindElementIdx(numbers, value):
+   for idx, v in enumerate(numbers):
+      if v is value:
+          return idx
+
+   return -1
+```
+
+```python
+if __name__ == "__main__":
+    python = 0.0
+    go = 0.0
+    for i in range(1000):
+        numbers = list(range(1, 1000))
+        random.shuffle(numbers)
+        gostart = time.time()
+        goidx = bench1.FindElementIdx(numbers, 555)
+        goend = time.time()
+        pystart = time.time()
+        pyidx = FindElementIdx(numbers, 555)
+        pyend = time.time()
+        python += (pyend-pystart)
+        go += (goend-gostart)
+
+    print("Python:", python)
+    print("gopy:", go)
+```
+
+
+| Python Interpreter | Time elapsed(sec)    | gopy elapsed(sec)  |
+|:------------------:|----------------------|--------------------|
+| Python2            | 0.0396955013275      | 3.74620819092      |
+| Python3            | 0.043562889099121094 | 3.0519542694091797 |
+| PyPy               | 0.00602054595947     | 2.59648394585      |
+
 
 ## Limitations
 * [Need to fix cgo policy for using gopy on production mode.](https://github.com/go-python/gopy/issues/103)
